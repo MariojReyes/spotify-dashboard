@@ -11,10 +11,9 @@ format:
 Placeholder text for column 1
 
 ```{r, loadpackages}
-
 #| echo: false
 #| include: false
-#| 
+
 library(tidyverse)
 library(httr2)
 
@@ -27,7 +26,7 @@ library(httr2)
 
 client_id <- Sys.getenv("SPOTIFY_CLIENT_ID")
 client_secret <- Sys.getenv("SPOTIFY_CLIENT_SECRET")
-
+ 
 # Generate Spotify access token
 
 req_access_token <- request("https://accounts.spotify.com/api/token") |>
@@ -68,16 +67,25 @@ if (nchar(client_secret) == 0) {
 
 ```
 
-## Column {width = "65%"}
+```{r, gethot100}
 
-### Row {height = "10%"}
+#curl_translate("curl --request GET --url https://api.spotify.com/v1/playlists/6UeSakyzhiEt4NB3UAd6NQ --header 'Authorization: Bearer 1POdFZRZbvb...qqillRxMr2z'")
 
-Placeholder text for column 2, row 1
+bbh100 <-request("https://api.spotify.com/v1/playlists/6UeSakyzhiEt4NB3UAd6NQ") |>
+  req_method("GET") |>
+  req_headers(Authorization = paste("Bearer", spotify_access_token)) |> 
+  req_error(is_error = ~ FALSE) |>
+  req_perform() |> 
+  resp_body_json()
+```
 
-### Row {height = "70%"}
+```{r}
 
-Placeholder text for column 2, row 2
+hot_100_df <- data.frame(
+  song_name = unlist(lapply(bbh100$track$items, FUN = function(x) { x$track$name })),
+  song_id = unlist(lapply(bbh100$track$items, FUN = function (x) { x$track$id })),
+  artist_name = unlist(lapply(bbh100$track$items, FUN = function (item) {item$track$artist[[1]]$name}))
+)
 
-### Row {height = "20%"}
-
-Placeholder text for column 2, row 3
+hot_100_df
+```
