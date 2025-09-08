@@ -11,13 +11,61 @@ format:
 Placeholder text for column 1
 
 ```{r, loadpackages}
+
 #| echo: false
 #| include: false
+#| 
 library(tidyverse)
+library(httr2)
+
 ```
 
-```{r, printstarwars}
-head(starwars)
+```{r, generateaccesstoken}
+# Defining access tokens
+#| echo: false
+#| include: false
+
+client_id <- Sys.getenv("SPOTIFY_CLIENT_ID")
+client_secret <- Sys.getenv("SPOTIFY_CLIENT_SECRET")
+
+# Generate Spotify access token
+
+req_access_token <- request("https://accounts.spotify.com/api/token") |>
+  req_method("POST") |>
+  req_headers("Content-Type" = "application/x-www-form-urlencoded") |>
+  req_body_raw(paste0(
+    "grant_type=client_credentials&client_id=",
+    client_id,
+    "&client_secret=",
+    client_secret
+  )) |>
+  req_perform() |>
+  resp_body_json()
+
+spotify_access_token <- req_access_token$access_token
+
+```
+
+```{r connectionerrorhandling}
+#| include: false
+#| echo: false
+
+
+print("=== Credential Check ===")
+print(paste("Client ID length:", nchar(client_id)))
+print(paste("Client Secret length:", nchar(client_secret)))
+print(paste("Client ID starts with:", substr(client_id, 1, 5)))
+print(paste("Client Secret starts with:", substr(client_secret, 1, 5)))
+
+# Check if either is empty
+
+if (nchar(client_id) == 0) {
+  stop("SPOTIFY_CLIENT_ID environment variable is not set or empty")
+}
+if (nchar(client_secret) == 0) {
+  stop("SPOTIFY_CLIENT_SECRET environment variable is not set or empty")
+}
+
 ```
 
 ## Column {width = "65%"}
