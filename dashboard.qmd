@@ -6,9 +6,9 @@ format:
     orientation: columns
 ---
 
-## Column {width = "35%"}
+## Column {width = "50%"}
 
-Placeholder text for column 1
+Billboard Hot 100
 
 ```{r, loadpackages}
 #| echo: false
@@ -83,9 +83,49 @@ bbh100 <-request("https://api.spotify.com/v1/playlists/6UeSakyzhiEt4NB3UAd6NQ") 
 
 hot_100_df <- data.frame(
   song_name = unlist(lapply(bbh100$track$items, FUN = function(x) { x$track$name })),
-  song_id = unlist(lapply(bbh100$track$items, FUN = function (x) { x$track$id })),
-  artist_name = unlist(lapply(bbh100$track$items, FUN = function (item) {item$track$artist[[1]]$name}))
+  song_id = unlist(lapply(bbh100$track$items, FUN = function(x) { x$track$id })),
+  artist_name = unlist(lapply(bbh100$track$items, FUN = function(item) {item$track$artist[[1]]$name})),
+  release_date = unlist(lapply(bbh100$tracks$items, FUN = function(x) { x$track$album$release_date })),
+  album_art = unlist(lapply(bbh100$tracks$items, FUN = function(item) {item$track$album$images[[1]]$url})),
+  popularity = unlist(lapply(bbh100$tracks$items, FUN = function(item) {item$track$popularity}))
 )
 
 hot_100_df
 ```
+
+## Column {width = "50%"}
+
+Track Audio Analysis 
+
+```{r,trackaudioanalysisreq}
+#curl_translate("curl --request GET \ --url https://api.spotify.com/v1/audio-analysis/11dFghVXANMlKmJXsNCbNl \ --header 'Authorization: Bearer 1POdFZRZbvb...qqillRxMr2z'")
+
+gettracksmeta <- vector(mode = "list", length = 100)
+for (i in 1:100){
+  audio_analysis <- request(paste0("https://api.spotify.com/v1/audio-analysis/", hot_100_df$song_id[i])) |>
+  req_method("GET") |>
+  req_headers(
+    Authorization = paste("Bearer", spotify_access_token),
+  ) |>
+  req_error(is_error = ~ FALSE) |> 
+  req_perform() |> 
+  resp_body_json()
+  
+  gettracksmeta[[i]] <- unlist(lapply(audio_analysis$sections, FUN = function(x) {x$tempo}))
+} 
+
+
+gettracksmeta
+
+audio_analysis <- request("https://api.spotify.com/v1/audio-analysis/11dFghVXANMlKmJXsNCbNl") |>
+  req_method("GET") |>
+  req_headers(
+    Authorization = paste("Bearer", spotify_access_token),
+  ) |>
+  req_error(is_error = ~ FALSE) |> 
+  req_perform() |> 
+  resp_body_json()
+audio_analysis
+
+```
+
