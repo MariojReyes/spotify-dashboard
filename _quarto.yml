@@ -9,18 +9,14 @@ website:
   repo-url: https://github.com/MariojReyes/spotify-dashboard
   repo-actions: [edit, source, issue]
   sidebar:
-    title: "Spotify Dashboard Posit 2024 Table Contest"
+    title: "Billboard Hot 100"
     style: "docked"
     search: true
     collapse-level: 1
     logo: images/logo.png
     contents: 
-      - href: index.qmd
-        text: Home
       - href: dashboard.qmd
-        text: My entry
-      - href: tutorial.qmd
-        text: Tutorial
+        text: Dashboard
       - href: about.qmd
         text: About Me
 
