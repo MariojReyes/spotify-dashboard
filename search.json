@@ -1,22 +1,12 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "spotify-dashboard",
-    "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "About Me",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2",
+    "text": "&lt;img src=“images.jpg” style=“width: 25vw; border-radius: 15px; transition: transform 0.3s ease;” onmouseover=“this.style.transform=‘scale(1.02)’” onmouseout=“this.style.transform=‘scale(1)’”&gt;\n\n\n\n\n\n👋 Hi, I’m Mario\n\nWelcome to my project!\nThis dashboard is part of a personal learning exercise where I explore R, Quarto, reproducible workflows, and interactive data products.\nIt was inspired by Melissa Van Bussel’s 2024 Posit Table Contest submission, which served as a template and educational reference.\nI’m currently building skills in data analysis and engineering—including SQL, Python, R, API work, and dashboard development. I enjoy creating small analytical tools and exploring real datasets, especially music, sports, and personal metrics.\nIf you’d like to connect, you can find me here:\n\nGitHub: https://github.com/MariojReyes\n\nLinkedIn: https://linkedin.com/in/marioreyesiii",
     "crumbs": [
-      "About"
+      "About Me"
     ]
   }
 ]

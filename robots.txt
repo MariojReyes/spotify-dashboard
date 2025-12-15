@@ -1,1 +1,1 @@
-Sitemap: https://MariojReyes.github.io/spotify-dashboard/sitemap.xml
+Sitemap: https://mariojreyes.github.io/spotify-dashboard/sitemap.xml
