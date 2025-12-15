@@ -1,9 +1,40 @@
 ---
-title: "About"
+title: "About Me"
+toc: false
 ---
 
-About this site
-
-```{r}
-1 + 1
+```{=html}
+<!-- This project is a learning exercise inspired by 
+     Melissa Van Bussel’s 2024 Posit Table Contest submission.
+     Original dashboard structure and design patterns credited to her work: 
+     https://github.com/melissavanbussel/spotify-dashboard -->
 ```
+
+:::::: columns
+::: {.column width="35%"}
+\<img src="images\headshot.jpg" style="width: 25vw; border-radius: 15px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"\>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+<big>
+
+# 👋 Hi, I'm Mario
+
+### Welcome to my project!
+
+This dashboard is part of a personal learning exercise where I explore R, Quarto, reproducible workflows, and interactive data products.\
+It was inspired by **Melissa Van Bussel’s 2024 Posit Table Contest submission**, which served as a template and educational reference.
+
+I'm currently building skills in data analysis and engineering—including SQL, Python, R, API work, and dashboard development. I enjoy creating small analytical tools and exploring real datasets, especially music, sports, and personal metrics.
+
+If you'd like to connect, you can find me here:
+
+-   GitHub: https://github.com/MariojReyes\
+-   LinkedIn: https://linkedin.com/in/marioreyesiii
+
+</big>
+:::
+::::::

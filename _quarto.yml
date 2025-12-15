@@ -2,20 +2,32 @@ project:
   type: website
 
 website:
-  title: "spotify-dashboard"
+  title: "Spotify Dashboard"
+  favicon: images/logo.png
+  page-navigation: true
+  site-url: https://mariojreyes.github.io/spotify-dashboard/
+  repo-url: https://github.com/MariojReyes/spotify-dashboard
+  repo-actions: [edit, source, issue]
   sidebar:
-    contents:
+    title: "Spotify Dashboard Posit 2024 Table Contest"
+    style: "docked"
+    search: true
+    collapse-level: 1
+    logo: images/logo.png
+    contents: 
       - href: index.qmd
         text: Home
-      - href: about.qmd
-        text: About
       - href: dashboard.qmd
-        text: Dashboard
+        text: My entry
+      - href: tutorial.qmd
+        text: Tutorial
+      - href: about.qmd
+        text: About Me
 
 format:
   html:
     theme: [cosmo, custom.scss]
+    highlight-style: atom-one-dark
     toc: true
-
-
-
+    grid:
+      sidebar-width: 150px
