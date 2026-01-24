@@ -12,8 +12,31 @@ A small Quarto dashboard that pulls tracks from Spotify’s “Billboard Hot 100
 - Fetches the playlist + tracks.
 - Writes the track data to `hot100_ojs.json` so the Observable JS dropdown can drive the embed.
 
-Future features:
-Add a visual displaying how long a song has been on the hot 100.
+Repo Layout:
+```
+spotify-dashboard/
+├── .Rprofile
+├── .github/
+│   └── workflows/
+│       └── publish.yml
+├── .gitignore
+├── README.md
+├── _quarto.yml
+├── about.qmd
+├── custom.scss
+├── dashboard.qmd
+├── hot100.json
+├── images/
+│   ├── headshot.jpg
+│   ├── logo.png
+│   └── spotify-logo-png-7069.png
+├── renv.lock
+├── renv/
+│   ├── .gitignore
+│   ├── activate.R
+│   └── settings.json
+└── spotify-dashboard.Rproj
+```
 
 
 Credits:
