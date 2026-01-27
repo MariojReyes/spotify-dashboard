@@ -37,7 +37,7 @@ jobs:
           cache-version: 1
 
       - name: Fetch Latest Hot 100 Data
-        run: Rscript fetch_hot100.R
+        run: Rscript scripts/fetch_hot100.R
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
