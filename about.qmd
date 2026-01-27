@@ -12,7 +12,8 @@ toc: false
 
 :::::: columns
 ::: {.column width="35%"}
-\<img src="images/headshot.jpg" style="width: 25vw; border-radius: 15px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"\>
+<img src="images/headshot.jpg" style="width: 25vw; border-radius: 15px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+:::
 :::
 
 ::: {.column width="5%"}
