@@ -3,7 +3,10 @@
 .RData
 .Ruserdata
 .Renviron
-.hot100_ojs.json
+
+notes.md
 
 /.quarto/
 /_site/
+
+**/*.quarto_ipynb

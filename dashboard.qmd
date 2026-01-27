@@ -6,6 +6,17 @@ format:
     orientation: columns
 ---
 
+```{r}
+#|include: false
+
+#install packages
+library(httr2)
+library(jsonlite)
+library(tidyverse)
+library(purrr)
+```
+
+
 ## Column {width="45%"}
 
 ```{r, createtable}
