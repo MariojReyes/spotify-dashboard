@@ -2,7 +2,7 @@
 # CACHE MANAGEMENT: Compare Hot 100 tracks & manage audio features cache
 # ==============================================================================
 # This script:
-# 1. Loads current Hot 100 from hot100_ojs.json
+# 1. Loads current Hot 100 from data/hot100_ojs.json
 # 2. Compares with cached track IDs from last week
 # 3. Identifies NEW tracks (need ReccoBeats), KEPT tracks (use cache), DROPPED tracks
 # 4. Returns info needed for fetch_audio_features.R
@@ -17,10 +17,10 @@ library(jsonlite)
 
 # load current Hot 100 (from fetch_hot100.R output)
 
-load_current_hot100 <- function(json_path = "hot100_ojs.json") {
+load_current_hot100 <- function(json_path = "data/hot100_ojs.json") {
   
   if (!file.exists(json_path)) {
-    stop("hot100_ojs.json not found. Run fetch_hot100.R first.")
+    stop("data/hot100_ojs.json not found. Run fetch_hot100.R first.")
   }
   
   hot100_df <- read_json(json_path, simplifyVector = TRUE) |>

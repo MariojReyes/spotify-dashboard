@@ -17,13 +17,8 @@ library(gt)
 library(purrr)
 
 #read the data file into the variable "hot100_df"
-if (file.exists("hot100_ojs.json")) {
-  hot100_df <- fromJSON("hot100_ojs.json")
-} else if (file.exists("data/hot100_ojs.json")) {
-  hot100_df <- fromJSON("data/hot100_ojs.json")
-} else {
-  stop("Could not find hot100_ojs.json file!")
-}
+
+hot100_df <- fromJSON("data/hot100_ojs.json")
 
 ```
 

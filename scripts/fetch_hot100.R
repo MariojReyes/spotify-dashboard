@@ -38,4 +38,4 @@ hot100_df <- tibble(
   filter(!is.na(song_id), song_id != "")
 
 # Save data for Observable JS (replacement for ojs_define)
-write_json(hot100_df, "hot100_ojs.json", auto_unbox = TRUE, null = "null")
+write_json(hot100_df, "data/hot100_ojs.json", auto_unbox = TRUE, null = "null")
