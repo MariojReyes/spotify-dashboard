@@ -73,7 +73,7 @@ load_caches <- function() {
 
 compare_track_lists <- function(current_ids, cached_ids) {
   
-  cat("\n📋 Comparing track lists:\n")
+  cat("\n Comparing track lists:\n")
   
   new_ids <- setdiff(current_ids, cached_ids)
   kept_ids <- intersect(current_ids, cached_ids)
