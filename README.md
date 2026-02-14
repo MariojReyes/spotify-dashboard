@@ -22,7 +22,6 @@ spotify-dashboard/
 ├── about.qmd
 ├── custom.scss
 ├── dashboard.qmd
-├── hot100_ojs.json
 ├── data/
 │   ├── hot100_ojs.json
 │   ├── hot100_enriched.rds
