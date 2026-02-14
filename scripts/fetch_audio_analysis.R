@@ -39,7 +39,7 @@ fetch_audio_features <- function(spotify_ids) {
       req_perform()
   
     response_content <- resp_body_json(response)
-    cat("Recieved response", length(response_content$content), "traacks from API\n")
+    cat("Recieved response", length(response_content$content), "tracks from API\n")
 
     return(response_content$content)
 
