@@ -1,31 +1,38 @@
 # Billboard Hot 100 (Spotify Dashboard)
 
-A small Quarto dashboard that pulls tracks from Spotify’s “Billboard Hot 100” playlist and displays them in a table with album art + Spotify popularity, plus a track embed on the right.
+A Quarto dashboard that tracks songs from Spotify’s “Billboard Hot 100” playlist and displays them in an interactive table with album art, duration, and Spotify popularity, plus a track embed player.
 
 ## What it shows
-- Playlist tracks (name, artist, duration)
-- Spotify popularity (0–100) as a bubble
+- Current playlist tracks (song, artist, duration, release date in source data)
+- Spotify popularity (0–100) as a bubble in the table
 - Track embed player (Spotify iframe)
+- Cached enrichment pipeline for audio features used in downstream analysis data
 
 ## How it works (quick)
 - Uses the Spotify Web API with **Client Credentials** (no user login).
-- Fetches the playlist + tracks.
-- Writes the track data to `hot100_ojs.json` so the Observable JS dropdown can drive the embed.
+- Fetches the Billboard Hot 100 Spotify playlist and writes JSON output for dashboard interactivity.
+- Uses cache-aware scripts to detect new chart entries and only fetch missing audio features.
+- Pulls audio-feature enrichment from ReccoBeats and writes `data/hot100_enriched.rds` for extended analysis workflows.
 
 Repo Layout:
 ```
 spotify-dashboard/
-├── .Rprofile
-├── .github/
-│   └── workflows/
-│       └── publish.yml
-├── .gitignore
 ├── README.md
 ├── _quarto.yml
 ├── about.qmd
 ├── custom.scss
 ├── dashboard.qmd
-├── hot100.json
+├── hot100_ojs.json
+├── data/
+│   ├── hot100_ojs.json
+│   ├── hot100_enriched.rds
+│   └── cache/
+│       ├── audio_features_cache.rds
+│       └── hot100_ids_cache.rds
+├── scripts/
+│   ├── fetch_hot100.R
+│   ├── manage_cache.R
+│   └── fetch_audio_analysis.R
 ├── images/
 │   ├── headshot.jpg
 │   ├── logo.png

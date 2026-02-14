@@ -22,12 +22,14 @@ toc: false
 ::: {.column width="60%"}
 <big>
 
-# 👋 Hi, I'm Mario
+# Hi, I'm Mario
 
 ### Welcome to my project!
 
 This dashboard is part of a personal learning exercise where I explore R, Quarto, reproducible workflows, and interactive data products.\
 It was inspired by **Melissa Van Bussel’s 2024 Posit Table Contest submission**, which served as a template and educational reference.
+
+The current version includes a lightweight data pipeline that refreshes Spotify Hot 100 track data, manages cache files for weekly updates, and enriches chart tracks with audio features for analysis-ready outputs.
 
 I'm currently building skills in data analysis and engineering—including SQL, Python, R, API work, and dashboard development. I enjoy creating small analytical tools and exploring real datasets, especially music, sports, and personal metrics.
 
