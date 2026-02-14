@@ -32,8 +32,8 @@ hot100_df <- tibble(
   artist_name = purrr::map_chr(hot100$tracks$items, ~ .x$track$album$artists[[1]]$name %||% NA_character_),
   album_art = purrr::map_chr(hot100$tracks$items, ~ .x$track$album$images[[1]]$url %||% NA_character_),
   track_duration = purrr::map_dbl(hot100$tracks$items, ~ .x$track$duration_ms %||% NA_real_),
-  popularity = purrr::map_int(hot100$tracks$items, ~ .x$track$popularity %||% NA_integer_)
-  #,sparkline = ""  # placeholder column (blank) - want to add historical average later (days on bbh100)
+  popularity = purrr::map_int(hot100$tracks$items, ~ .x$track$popularity %||% NA_integer_),
+    release_date = purrr::map_chr(hot100$tracks$items, ~ .x$track$album$release_date %||% NA_character_)
 ) |>
   filter(!is.na(song_id), song_id != "")
 

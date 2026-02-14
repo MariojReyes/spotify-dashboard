@@ -152,9 +152,7 @@ manage_cache <- function() {
   ))
 }
 
-# uncomment to run as a standalone script
-
-#if (!interactive()) {
-#  result <- manage_cache()
-#  cat("New track IDs:", paste(result$new_track_ids, collapse = ", "), "\n")
-#}
+if (!interactive()) {
+  result <- manage_cache() # run main function if script is executed directly
+  cat("New track IDs:", paste(result$new_track_ids, collapse = ", "), "\n")
+}
