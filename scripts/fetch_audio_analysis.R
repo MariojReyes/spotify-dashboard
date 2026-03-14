@@ -187,7 +187,7 @@ cache_info <- manage_cache()
 if (length(cache_info$new_track_ids) > 0) {
 
   cat("\n Fetching from ReccoBeats API...\n")
-  new_track_audio_df <- fetch_in_batches(cache_info$new_track_ids, batch_size = 40)
+  new_tracks_audio_df <- fetch_in_batches(cache_info$new_track_ids, batch_size = 40)
   new_tracks_audio_df <- add_missing_tracks(cache_info$new_track_ids, new_tracks_audio_df)
 
 } else {
@@ -209,5 +209,9 @@ cat("  - Total audio features:", nrow(audio_features_df), "\n")
 cat("\n Creating enriched dataset...\n")
 merged_df <- create_enriched_dataset(cache_info$hot100_df, audio_features_df)
 
+
+# Now that all data is validated and saved, persist the cache tracking with snapshot_id
+source("scripts/manage_cache.R")  # Load the function (already done in manage_cache() call but explicit here)
+save_ids_cache(cache_info$hot100_df$song_id, cache_info$current_snapshot_id)
 cat("\n Audio features workflow complete!\n")
 cat(" Next: Render dashboard with data/hot100_enriched.rds\n\n")

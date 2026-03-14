@@ -38,4 +38,12 @@ hot100_df <- tibble(
   filter(!is.na(song_id), song_id != "")
 
 # Save data for Observable JS (replacement for ojs_define)
+
+# Extract snapshot_id (chart-level identifier that changes when playlist is updated)
+hot100_snapshot_id <- hot100$snapshot_id
+
 write_json(hot100_df, "data/hot100_ojs.json", auto_unbox = TRUE, null = "null")
+
+# Save snapshot_id for cache management
+saveRDS(hot100_snapshot_id, "data/hot100_snapshot.rds")
+cat("Snapshot ID:", hot100_snapshot_id, "\n")
