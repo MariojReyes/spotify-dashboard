@@ -1,5 +1,5 @@
 ---
-title: "Billboard Hot 100"
+title: "Hot 100 Chart"
 format: 
   dashboard: 
     logo: "images/logo.png"
@@ -20,6 +20,15 @@ library(purrr)
 
 hot100_df <- fromJSON("data/hot100_ojs.json")
 
+```
+
+
+```{=html}
+<div class="d-flex flex-wrap gap-2 mb-2">
+  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="about.qmd">ℹ️ About Me</a>
+  <a class="btn btn-success btn-sm rounded-pill px-3" href="dashboard.qmd">📊 Hot 100 Chart</a>
+  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="mood-of-the-week.qmd">🎧 Mood Snapshot</a>
+</div>
 ```
 
 
@@ -174,3 +183,11 @@ html`<iframe class="custom-iframe" style="border-radius:12px; display: flex; jus
 ```
 
 
+
+```{=html}
+<div class="d-flex flex-wrap gap-2 mt-3">
+  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="about.qmd">ℹ️ About Me</a>
+  <a class="btn btn-success btn-sm rounded-pill px-3" href="dashboard.qmd">📊 Hot 100 Chart</a>
+  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="mood-of-the-week.qmd">🎧 Mood Snapshot</a>
+</div>
+```

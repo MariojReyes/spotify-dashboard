@@ -4,6 +4,14 @@ toc: false
 ---
 
 ```{=html}
+<div class="d-flex flex-wrap gap-2 mb-2">
+  <a class="btn btn-success btn-sm rounded-pill px-3" href="about.qmd">ℹ️ About Me</a>
+  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="dashboard.qmd">📊 Hot 100 Chart</a>
+  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="mood-of-the-week.qmd">🎧 Mood Snapshot</a>
+</div>
+```
+
+```{=html}
 <!-- This project is a learning exercise inspired by 
      Melissa Van Bussel’s 2024 Posit Table Contest submission.
      Original dashboard structure and design patterns credited to her work: 
@@ -34,9 +42,19 @@ The current version includes a lightweight data pipeline that refreshes Spotify 
 
 If you'd like to connect, you can find me here:
 
--   GitHub: https://github.com/MariojReyes\
--   LinkedIn: https://linkedin.com/in/marioreyesiii
+::: {.about-contact}
+-   GitHub: [github.com/MariojReyes](https://github.com/MariojReyes)\
+-   LinkedIn: [linkedin.com/in/marioreyesiii](https://linkedin.com/in/marioreyesiii)
+:::
 
 </big>
 :::
 ::::::
+
+```{=html}
+<div class="d-flex flex-wrap gap-2 mt-3">
+  <a class="btn btn-success btn-sm rounded-pill px-3" href="about.qmd">ℹ️ About Me</a>
+  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="dashboard.qmd">📊 Hot 100 Chart</a>
+  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="mood-of-the-week.qmd">🎧 Mood Snapshot</a>
+</div>
+```
