@@ -14,10 +14,12 @@ website:
     collapse-level: 1
     logo: images/logo.png
     contents: 
-      - href: dashboard.qmd
-        text: Dashboard
       - href: about.qmd
         text: About Me
+      - href: dashboard.qmd
+        text: Hot 100 Chart
+      - href: mood-of-the-week.qmd
+        text: Mood Snapshot
 
 format:
   html:

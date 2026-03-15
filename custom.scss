@@ -161,3 +161,12 @@ div.sidebar-item-container:hover {
 .sidebar .toc-actions ul li a {
   color: $theme-text-color !important;
 }
+
+/* Improve contact-link legibility on About page */
+.about-contact a {
+  color: $theme-light-gray !important;
+  font-weight: 600;
+}
+.about-contact a:hover {
+  color: $theme-lighter-green !important;
+}
