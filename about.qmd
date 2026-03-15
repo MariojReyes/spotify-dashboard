@@ -5,6 +5,14 @@ toc: false
 
 ```{=html}
 <div class="d-flex flex-wrap gap-2 mb-2">
+  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="dashboard.qmd">🏠 Dashboard</a>
+  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="mood-of-the-week.qmd">🎧 Mood of the Week</a>
+  <a class="btn btn-success btn-sm rounded-pill px-3" href="about.qmd">ℹ️ About</a>
+</div>
+```
+
+```{=html}
+<div class="d-flex flex-wrap gap-2 mb-2">
   <a class="btn btn-success btn-sm rounded-pill px-3" href="about.qmd">ℹ️ About Me</a>
   <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="dashboard.qmd">📊 Hot 100 Chart</a>
   <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="mood-of-the-week.qmd">🎧 Mood Snapshot</a>
