@@ -4,22 +4,10 @@ project:
 website:
   title: "Spotify Dashboard"
   favicon: images/logo.png
-  page-navigation: true
+  page-navigation: false
   site-url: https://mariojreyes.github.io/spotify-dashboard/
   repo-url: https://github.com/MariojReyes/spotify-dashboard
   repo-actions: [edit, source, issue]
-  sidebar:
-    title: "Billboard Hot 100"
-    style: "docked"
-    collapse-level: 1
-    logo: images/logo.png
-    contents: 
-      - href: about.qmd
-        text: About Me
-      - href: dashboard.qmd
-        text: Hot 100 Chart
-      - href: mood-of-the-week.qmd
-        text: Mood Snapshot
 
 format:
   html:

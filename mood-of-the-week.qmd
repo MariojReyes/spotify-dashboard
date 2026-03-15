@@ -160,14 +160,16 @@ kpis <- list(
   list(label = "Median Tempo", value = sprintf("%.0f BPM", kpi$tempo_median),   sub = "&nbsp;")
 )
 
-cat('<div class="mood-kpi-row">')
-for (k in kpis) {
-  cat(sprintf(
+kpi_cards <- vapply(
+  kpis,
+  function(k) sprintf(
     '<div class="mood-kpi-card">\n       <div class="mood-kpi-label">%s</div>\n       <div class="mood-kpi-value">%s</div>\n       <div class="mood-kpi-sub">%s</div>\n     </div>',
     k$label, k$value, k$sub
-  ))
-}
-cat('</div>')
+  ),
+  character(1)
+)
+
+knitr::asis_output(sprintf('<div class="mood-kpi-row">%s</div>', paste(kpi_cards, collapse = "")))
 ```
 
 ::: {.mood-section-header}
@@ -297,11 +299,13 @@ make_cards <- function(df, title) {
   )
 }
 
-cat('<div class="mood-outlier-row">')
-cat(make_cards(happiest,    "😊 Happiest"))
-cat(make_cards(energetic,   "⚡ Most Energetic"))
-cat(make_cards(melancholic, "🌑 Most Melancholic"))
-cat('</div>')
+outlier_html <- paste0(
+  make_cards(happiest, "😊 Happiest"),
+  make_cards(energetic, "⚡ Most Energetic"),
+  make_cards(melancholic, "🌑 Most Melancholic")
+)
+
+knitr::asis_output(sprintf('<div class="mood-outlier-row">%s</div>', outlier_html))
 ```
 
 ::: {.mood-section-header}
