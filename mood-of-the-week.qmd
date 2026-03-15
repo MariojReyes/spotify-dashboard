@@ -114,7 +114,7 @@ dark_theme <- theme_minimal(base_size = 13) +
     plot.background   = element_rect(fill = "#121212", color = NA),
     legend.background = element_rect(fill = "#121212", color = NA),
     legend.key        = element_rect(fill = "#121212", color = NA),
-    text              = element_text(color = "#ffffff", family = "Montserrat"),
+    text              = element_text(color = "#ffffff", family = "sans"),
     axis.text         = element_text(color = "#cccccc"),
     axis.title        = element_text(color = "#ffffff"),
     legend.title      = element_text(color = "#ffffff"),
@@ -318,7 +318,7 @@ Song Preview
 :::
 
 ```{ojs}
-#| echo: false
+//| echo: false
 hot100 = await FileAttachment("data/hot100_ojs.json").json()
 
 viewof songDropdown = Inputs.select(
@@ -332,7 +332,7 @@ viewof songDropdown = Inputs.select(
 ```
 
 ```{ojs}
-#| echo: false
+//| echo: false
 html`<iframe
   style="border-radius:12px;margin-top:10px;display:block;"
   src=${`https://open.spotify.com/embed/track/${songDropdown.song_id}?utm_source=generator&theme=0`}
