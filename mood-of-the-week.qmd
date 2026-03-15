@@ -97,12 +97,6 @@ quad_summary <- hot100_mood |>
     weighted_share = pop_sum / sum(pop_sum)
   )
 
-corner_lab <- quad_summary |>
-  arrange(archetype) |>
-  mutate(label = sprintf("%s: %.1f%% / w %.1f%%", archetype, 100 * track_share, 100 * weighted_share)) |>
-  pull(label) |>
-  paste(collapse = "  •  ")
-
 happiest    <- hot100_mood |> arrange(desc(valence))                                     |> slice_head(n = 5)
 energetic   <- hot100_mood |> arrange(desc(energy))                                      |> slice_head(n = 5)
 melancholic <- hot100_mood |> mutate(low_combo = valence + energy) |> arrange(low_combo) |> slice_head(n = 5)
@@ -192,9 +186,9 @@ ggplot(hot100_mood, aes(x = valence, y = energy)) +
     x        = "Valence  →  more positive",
     y        = "Energy  →  more intense",
     color    = "Mood archetype",
-    size     = "Popularity",
-    subtitle = corner_lab
+    size     = "Popularity"
   ) +
+  guides(size = guide_legend(override.aes = list(color = "#cfcfcf", alpha = 1))) +
   dark_theme
 ```
 
@@ -243,6 +237,10 @@ ggplot(plot_data, aes(x = value)) +
 Archetype Composition
 :::
 
+::: {.mood-intro}
+Popularity-weighted share is computed as each archetype's sum of Spotify popularity divided by the total popularity sum across all Hot 100 tracks this week.
+:::
+
 ```{r}
 #| echo: false
 #| fig-width: 11
@@ -261,10 +259,17 @@ comp_all <- bind_rows(
   comp_counts   |> select(archetype, value, metric),
   comp_weighted |> select(archetype, value, metric)
 ) |>
-  mutate(metric = factor(metric, levels = c("Track count", "Popularity-weighted share")))
+  mutate(
+    metric = factor(metric, levels = c("Track count", "Popularity-weighted share")),
+    label = case_when(
+      metric == "Track count" ~ as.character(round(value)),
+      TRUE ~ percent(value, accuracy = 0.1)
+    )
+  )
 
 ggplot(comp_all, aes(x = reorder(archetype, -value), y = value, fill = archetype)) +
   geom_col(width = 0.65) +
+  geom_text(aes(label = label), vjust = -0.35, size = 3.3, color = "#f3f3f3") +
   scale_fill_manual(values = mood_palette) +
   facet_wrap(~metric, scales = "free_y") +
   scale_y_continuous(labels = function(x) ifelse(x <= 1, percent(x, accuracy = 1), as.character(round(x)))) +
@@ -312,7 +317,7 @@ knitr::asis_output(sprintf('<div class="mood-outlier-row">%s</div>', outlier_htm
 Song Preview
 :::
 
-```{ojs}
+```{ojs echo=false}
 hot100 = await FileAttachment("data/hot100_ojs.json").json()
 
 viewof songDropdown = Inputs.select(
@@ -325,7 +330,7 @@ viewof songDropdown = Inputs.select(
 )
 ```
 
-```{ojs}
+```{ojs echo=false}
 html`<iframe
   style="border-radius:12px;margin-top:10px;display:block;"
   src=${`https://open.spotify.com/embed/track/${songDropdown.song_id}?utm_source=generator&theme=0`}
