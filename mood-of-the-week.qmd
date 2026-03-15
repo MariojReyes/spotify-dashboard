@@ -317,7 +317,8 @@ knitr::asis_output(sprintf('<div class="mood-outlier-row">%s</div>', outlier_htm
 Song Preview
 :::
 
-```{ojs echo=false}
+```{ojs}
+#| echo: false
 hot100 = await FileAttachment("data/hot100_ojs.json").json()
 
 viewof songDropdown = Inputs.select(
@@ -330,7 +331,8 @@ viewof songDropdown = Inputs.select(
 )
 ```
 
-```{ojs echo=false}
+```{ojs}
+#| echo: false
 html`<iframe
   style="border-radius:12px;margin-top:10px;display:block;"
   src=${`https://open.spotify.com/embed/track/${songDropdown.song_id}?utm_source=generator&theme=0`}
