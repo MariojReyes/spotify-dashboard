@@ -328,63 +328,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="mood-section-header">
 <p>Song Preview</p>
 </div>
-<div class="quarto-ojs-syntax-error">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-startfrom="320" data-syntax-error-position="0" data-source-offset="9"><pre class="sourceCode numberSource numberLines java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 319;"><span id="cb1-320"><a href="#cb1-320"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
-<span id="cb1-321"><a href="#cb1-321"></a>#<span class="op">|</span> echo<span class="op">:</span> <span class="kw">false</span></span>
-<span id="cb1-322"><a href="#cb1-322"></a>hot100 <span class="op">=</span> await <span class="fu">FileAttachment</span><span class="op">(</span><span class="st">"data/hot100_ojs.json"</span><span class="op">).</span><span class="fu">json</span><span class="op">()</span></span>
-<span id="cb1-323"><a href="#cb1-323"></a></span>
-<span id="cb1-324"><a href="#cb1-324"></a>viewof songDropdown <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span><span class="op">(</span></span>
-<span id="cb1-325"><a href="#cb1-325"></a>  hot100<span class="op">,</span></span>
-<span id="cb1-326"><a href="#cb1-326"></a>  <span class="op">{</span></span>
-<span id="cb1-327"><a href="#cb1-327"></a>    label<span class="op">:</span> <span class="st">"Choose a song"</span><span class="op">,</span></span>
-<span id="cb1-328"><a href="#cb1-328"></a>    format<span class="op">:</span> d <span class="op">=&gt;</span> `$<span class="op">{</span>d<span class="op">.</span><span class="fu">song_name</span><span class="op">}</span> — $<span class="op">{</span>d<span class="op">.</span><span class="fu">artist_name</span><span class="op">}</span>`<span class="op">,</span></span>
-<span id="cb1-329"><a href="#cb1-329"></a>    unique<span class="op">:</span> <span class="kw">true</span></span>
-<span id="cb1-330"><a href="#cb1-330"></a>  <span class="op">}</span></span>
-<span id="cb1-331"><a href="#cb1-331"></a><span class="op">)</span></span>
-<span id="cb1-332"><a href="#cb1-332"></a>```</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="callout callout-style-default callout-important callout-empty-content callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>OJS Syntax Error (line 321, column 1)Unexpected character ‘#’
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="322" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 321;"><span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>hot100 <span class="op">=</span> <span class="cf">await</span> <span class="fu">FileAttachment</span>(<span class="st">"data/hot100_ojs.json"</span>)<span class="op">.</span><span class="fu">json</span>()</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>viewof songDropdown <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>(</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>  hot100<span class="op">,</span></span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Choose a song"</span><span class="op">,</span></span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>    <span class="dt">format</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="vs">`</span><span class="sc">${</span>d<span class="op">.</span><span class="at">song_name</span><span class="sc">}</span><span class="vs"> — </span><span class="sc">${</span>d<span class="op">.</span><span class="at">artist_name</span><span class="sc">}</span><span class="vs">`</span><span class="op">,</span></span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>    <span class="dt">unique</span><span class="op">:</span> <span class="kw">true</span></span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
 </div>
 </div>
-<div class="callout-body-container callout-body">
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
 </div>
-<div class="quarto-ojs-syntax-error">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-startfrom="334" data-syntax-error-position="0" data-source-offset="9"><pre class="sourceCode numberSource numberLines java code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 333;"><span id="cb2-334"><a href="#cb2-334"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
-<span id="cb2-335"><a href="#cb2-335"></a>#<span class="op">|</span> echo<span class="op">:</span> <span class="kw">false</span></span>
-<span id="cb2-336"><a href="#cb2-336"></a>html`<span class="op">&lt;</span>iframe</span>
-<span id="cb2-337"><a href="#cb2-337"></a>  style<span class="op">=</span><span class="st">"border-radius:12px;margin-top:10px;display:block;"</span></span>
-<span id="cb2-338"><a href="#cb2-338"></a>  src<span class="op">=</span>$<span class="op">{</span>`https<span class="op">:</span><span class="co">//open.spotify.com/embed/track/${songDropdown.song_id}?utm_source=generator&amp;theme=0`}</span></span>
-<span id="cb2-339"><a href="#cb2-339"></a>  width<span class="op">=</span><span class="st">"100%"</span></span>
-<span id="cb2-340"><a href="#cb2-340"></a>  height<span class="op">=</span><span class="st">"180"</span></span>
-<span id="cb2-341"><a href="#cb2-341"></a>  frameBorder<span class="op">=</span><span class="st">"0"</span></span>
-<span id="cb2-342"><a href="#cb2-342"></a>  allowfullscreen<span class="op">=</span><span class="st">""</span></span>
-<span id="cb2-343"><a href="#cb2-343"></a>  allow<span class="op">=</span><span class="st">"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"</span></span>
-<span id="cb2-344"><a href="#cb2-344"></a>  loading<span class="op">=</span><span class="st">"lazy"</span><span class="op">&gt;</span></span>
-<span id="cb2-345"><a href="#cb2-345"></a><span class="op">&lt;/</span>iframe<span class="op">&gt;</span>`</span>
-<span id="cb2-346"><a href="#cb2-346"></a>```</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="callout callout-style-default callout-important callout-empty-content callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>OJS Syntax Error (line 335, column 1)Unexpected character ‘#’
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="335" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 334;"><span id="cb2-335"><a href="#cb2-335" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;iframe</span></span>
+<span id="cb2-336"><a href="#cb2-336" aria-hidden="true" tabindex="-1"></a><span class="vs">  style="border-radius:12px;margin-top:10px;display:block;"</span></span>
+<span id="cb2-337"><a href="#cb2-337" aria-hidden="true" tabindex="-1"></a><span class="vs">  src=</span><span class="sc">${</span><span class="vs">`https://open.spotify.com/embed/track/</span><span class="sc">${</span>songDropdown<span class="op">.</span><span class="at">song_id</span><span class="sc">}</span><span class="vs">?utm_source=generator&amp;theme=0`</span><span class="sc">}</span></span>
+<span id="cb2-338"><a href="#cb2-338" aria-hidden="true" tabindex="-1"></a><span class="vs">  width="100%"</span></span>
+<span id="cb2-339"><a href="#cb2-339" aria-hidden="true" tabindex="-1"></a><span class="vs">  height="180"</span></span>
+<span id="cb2-340"><a href="#cb2-340" aria-hidden="true" tabindex="-1"></a><span class="vs">  frameBorder="0"</span></span>
+<span id="cb2-341"><a href="#cb2-341" aria-hidden="true" tabindex="-1"></a><span class="vs">  allowfullscreen=""</span></span>
+<span id="cb2-342"><a href="#cb2-342" aria-hidden="true" tabindex="-1"></a><span class="vs">  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"</span></span>
+<span id="cb2-343"><a href="#cb2-343" aria-hidden="true" tabindex="-1"></a><span class="vs">  loading="lazy"&gt;</span></span>
+<span id="cb2-344"><a href="#cb2-344" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/iframe&gt;`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-2" data-nodetype="expression">
 
-</div>
 </div>
 </div>
 </div>
@@ -400,7 +383,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W119
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImhvdDEwMCA9IGF3YWl0IEZpbGVBdHRhY2htZW50KFwiZGF0YS9ob3QxMDBfb2pzLmpzb25cIikuanNvbigpXG5cbnZpZXdvZiBzb25nRHJvcGRvd24gPSBJbnB1dHMuc2VsZWN0KFxuICBob3QxMDAsXG4gIHtcbiAgICBsYWJlbDogXCJDaG9vc2UgYSBzb25nXCIsXG4gICAgZm9ybWF0OiBkID0+IGAke2Quc29uZ19uYW1lfSDigJQgJHtkLmFydGlzdF9uYW1lfWAsXG4gICAgdW5pcXVlOiB0cnVlXG4gIH1cbilcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Imh0bWxgPGlmcmFtZVxuICBzdHlsZT1cImJvcmRlci1yYWRpdXM6MTJweDttYXJnaW4tdG9wOjEwcHg7ZGlzcGxheTpibG9jaztcIlxuICBzcmM9JHtgaHR0cHM6Ly9vcGVuLnNwb3RpZnkuY29tL2VtYmVkL3RyYWNrLyR7c29uZ0Ryb3Bkb3duLnNvbmdfaWR9P3V0bV9zb3VyY2U9Z2VuZXJhdG9yJnRoZW1lPTBgfVxuICB3aWR0aD1cIjEwMCVcIlxuICBoZWlnaHQ9XCIxODBcIlxuICBmcmFtZUJvcmRlcj1cIjBcIlxuICBhbGxvd2Z1bGxzY3JlZW49XCJcIlxuICBhbGxvdz1cImF1dG9wbGF5OyBjbGlwYm9hcmQtd3JpdGU7IGVuY3J5cHRlZC1tZWRpYTsgZnVsbHNjcmVlbjsgcGljdHVyZS1pbi1waWN0dXJlXCJcbiAgbG9hZGluZz1cImxhenlcIj5cbjwvaWZyYW1lPmBcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnc29uZ0Ryb3Bkb3duJykifV19
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
