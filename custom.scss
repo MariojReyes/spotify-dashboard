@@ -21,152 +21,256 @@ $code-block-bg: $theme-medium-gray;
 
 /*-- scss:rules --*/
 
-/* Display options for tables */
 table {
   display: block;
   max-width: 100%;
   overflow: auto;
 }
+
 td {
   min-width: 200px;
 }
 
-/* Change the background colours to a Spotify-like theme */
 body {
   background-color: $theme-darkest-gray !important;
 }
+
 .card {
-  --bs-card-border-width: 0px; 
+  --bs-card-border-width: 0px;
   --bs-card-bg: $theme-darkest-gray !important;
 }
+
 .card-body {
   padding: 0px;
   color: $theme-text-color !important;
   background-color: $theme-darkest-gray;
 }
+
 .navbar {
   background-color: $theme-medium-gray;
   color: $theme-text-color;
 }
+
 :root {
   --bs-body-bg: $theme-darkest-gray !important;
   --bs-card-bg: $theme-darkest-gray !important;
 }
 
-/* Scrollbar theming */
 ::-webkit-scrollbar {
-    width: 12px; /* Vertical scrollbar width */
-    height: 12px; /* Horizontal scrollbar height */
+  width: 12px;
+  height: 12px;
 }
-::-webkit-scrollbar-track { /* Track (part the thumb slides within) */
-    background: $theme-darkest-gray; 
-    border-radius: 10px; /* Rounded corners on the track */
+
+::-webkit-scrollbar-track {
+  background: $theme-darkest-gray;
+  border-radius: 10px;
 }
-::-webkit-scrollbar-thumb { /* Thumb (draggable part of the scrollbar) */
-    background-color: $theme-spotify-green;
-    border-radius: 10px; /* Rounded corners on the thumb */
-    border: 3px solid $theme-darkest-gray; /* Makes the thumb slightly smaller than the track */
+
+::-webkit-scrollbar-thumb {
+  background-color: $theme-spotify-green;
+  border-radius: 10px;
+  border: 3px solid $theme-darkest-gray;
 }
-::-webkit-scrollbar-thumb:hover { /* Thumb hover effects */
-    background-color: $theme-lighter-green;
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $theme-lighter-green;
 }
-::-webkit-scrollbar-corner { /* Bottom corner of the scrollbar */
-    background: $theme-darkest-gray; /* Match the track background color */
+
+::-webkit-scrollbar-corner {
+  background: $theme-darkest-gray;
 }
-select { /* Dropdown styling */ 
-    background-color: $theme-darkest-gray !important;
-    padding: 8px;
-    border: 1px solid $theme-text-color !important;
-    border-radius: 4px;
-    width: 200px;
+
+select {
+  background-color: $theme-darkest-gray !important;
+  color: $theme-text-color !important;
+  padding: 8px;
+  border: 1px solid $theme-text-color !important;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 260px;
 }
-select option { /* Styling of the items in the dropdown list when dropdown button is clicked */
-    background-color: $theme-darkest-gray !important; /* Light grey background for options */
-    color: $theme-text-color !important; /* Text color for options */
+
+select option {
+  background-color: $theme-darkest-gray !important;
+  color: $theme-text-color !important;
 }
-select option:hover { /* Styling of the currently highlighted item in the dropdown menu */ 
+
+select option:hover {
   background-color: $theme-spotify-green !important;
 }
 
-/* Make superscripts in gt table not italic */
 .gt_footnote_marks sup {
   font-style: normal;
 }
 
-/* Make sure album art in gt table always stays square and maintains aspect ratio */ 
 .gt_table img {
   object-fit: contain;
 }
 
-/* Defined custom class in generate_circle_svg function to be able to modify the font size of the nanoplot text only */ 
 div.html-fill-item.html-fill-container text:not(.circle-text) {
-  font-size: 6em; /* This will exclude text elements with the 'circle-text' class */
+  font-size: 6em;
 }
 
-/* Remove underline from hyperlinks*/
 a {
   text-decoration: none;
   color: $link-color;
 }
 
-/* Bold navbar title */
 .navbar-title {
   font-weight: bold;
 }
 
-/* Height of embedded Spotify Web Player */
 .TrackWidget_widgetContainer__gADzr {
   height: 100vh !important;
 }
+
 div.html-fill-item.html-fill-container .custom-iframe {
-  justify-content: center; /* Center the web player only, not the gt table */
+  justify-content: center;
 }
 
-/* Make all headings and paragraph text white */ 
 h1, h2, h3, h4, h5, h6, p {
   color: $theme-text-color;
 }
 
-/* Make the text in the sidebar (of the Quarto website, not the dashboard), dark gray */ 
+label {
+  color: $theme-text-color;
+}
+
 .sidebar-title {
   color: $theme-darkest-gray;
 }
 
-/* Text colour of currently selected page in sidebar */
 div.sidebar-item-container .active {
   color: $theme-dark-purple;
 }
 
-/* Text colour of noncurrently selected sidebar list items */
 div.sidebar-item-container {
   color: $theme-darkest-gray;
 }
 
-/* Text colour of currently hovered on sidebar list item */ 
 div.sidebar-item-container:hover {
   color: $theme-dark-purple;
 }
 
-/* Colour of "Next page" text in bottom right of each Quarto HTML webpage */ 
 .nav-page a {
   color: $link-color;
 }
 
-/* Colour of "AUTHOR" text */ 
 #title-block-header.quarto-title-block.default .quarto-title-meta-heading {
   color: $link-color;
 }
 
-/* Colour of non-hovered list items in table of contents */
 .sidebar .toc-actions ul li a {
   color: $theme-text-color !important;
 }
 
-/* Improve contact-link legibility on About page */
 .about-contact a {
-  color: $theme-light-gray !important;
+  color: $theme-text-color !important;
   font-weight: 600;
 }
+
+.about-contact li {
+  color: #ffffff;
+}
+
 .about-contact a:hover {
   color: $theme-lighter-green !important;
+}
+
+.page-shell {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.page-nav {
+  justify-content: center;
+  align-items: center;
+}
+
+.about-headshot {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 15px;
+  display: block;
+  margin: 0 auto;
+}
+
+.quarto-title-block {
+  width: min(1200px, calc(100% - 2rem));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cell-output-display {
+  overflow-x: auto;
+}
+
+.about-columns {
+  column-gap: 2.5rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .about-columns {
+    column-gap: 1.5rem;
+  }
+}
+
+.page-nav {
+  justify-content: center;
+}
+
+.dashboard-layout {
+  column-gap: 2rem;
+  align-items: start;
+}
+
+.dashboard-side-top {
+  margin-top: 3.75rem;
+  margin-bottom: 2rem;
+}
+
+.dashboard-side-bottom {
+  margin-top: 2rem;
+}
+
+.dashboard-side-top .observablehq,
+.dashboard-side-bottom .observablehq,
+.dashboard-side-top .cell-output,
+.dashboard-side-bottom .cell-output {
+  width: 100%;
+}
+
+.dashboard-side-top label,
+.dashboard-side-top .form-label {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: $theme-text-color;
+  font-weight: 600;
+}
+
+.dashboard-side-top select {
+  width: 100%;
+  max-width: 260px;
+}
+
+.custom-iframe {
+  width: 100%;
+  min-height: 352px;
+  display: block;
+}
+
+@media (max-width: 991px) {
+  .dashboard-layout {
+    column-gap: 0;
+  }
+
+  .dashboard-side-top {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .dashboard-side-bottom {
+    margin-top: 1rem;
+  }
 }

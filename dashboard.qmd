@@ -1,41 +1,139 @@
 ---
 title: "This Week's Billboard Hot 100 Chart"
-format: 
-  dashboard: 
-    logo: "images/logo.png"
-    orientation: columns
+toc: false
+format:
+  html:
+    page-layout: full
 ---
 
 ```{r}
-#|include: false
+#| include: false
 
-#install packages
 library(httr2)
 library(jsonlite)
 library(tidyverse)
 library(gt)
 library(purrr)
 
-#read the data file into the variable "hot100_df"
-
 hot100_df <- fromJSON("data/hot100_ojs.json")
-
 ```
 
-
 ```{=html}
-<div class="d-flex flex-wrap gap-2 mb-2">
-  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="about.qmd">ℹ️ About Me</a>
-  <a class="btn btn-success btn-sm rounded-pill px-3" href="dashboard.qmd">📊 Hot 100 Chart</a>
-  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="mood-of-the-week.qmd">🎧 Mood Snapshot</a>
+<style>
+.dashboard-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem 1rem;
+}
+
+.dashboard-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0 0 1rem 0;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(400px, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.dashboard-left {
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+.dashboard-left .cell-output-display {
+  max-height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.dashboard-right {
+  min-width: 320px;
+  max-width: 100%;
+  padding-top: 3.25rem;
+  position: sticky;
+  top: 1rem;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.dashboard-control {
+  margin-bottom: 2rem;
+}
+
+.dashboard-control .observablehq,
+.dashboard-control .cell-output,
+.dashboard-player .observablehq,
+.dashboard-player .cell-output {
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.dashboard-player .observablehq > * {
+  margin: 0 !important;
+}
+
+.dashboard-control label,
+.dashboard-control .form-label {
+  display: block;
+  margin-bottom: 0.65rem;
+  font-weight: 600;
+}
+
+.dashboard-control select {
+  width: 100%;
+  max-width: 100%;
+}
+
+.custom-iframe {
+  width: 100%;
+  max-width: 100%;
+  min-height: 500px;
+  display: block;
+  border: 0;
+  border-radius: 12px;
+}
+
+@media (max-width: 991px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .dashboard-right {
+    padding-top: 0;
+    position: static;
+  }
+}
+</style>
+
+<div class="dashboard-shell">
+  <div class="dashboard-nav">
+    <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="about.html">ℹ️ About Me</a>
+    <a class="btn btn-success btn-sm rounded-pill px-3" href="dashboard.html">📊 Hot 100 Chart</a>
+    <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="mood-of-the-week.html">🎧 Mood Snapshot</a>
+  </div>
 </div>
 ```
 
+::: {.dashboard-shell}
 
-## Column {width="45%"}
+```{=html}
+<div class="dashboard-grid">
+  <div class="dashboard-left">
+```
 
-```{r, createtable}
-#| expandable: false
+## Billboard Hot 100 Chart
+
+```{r}
+#| echo: false
+
 generate_svg_circle <- function(popularity_value) {
   popularity_value <- as.numeric(popularity_value)
 
@@ -50,7 +148,7 @@ generate_svg_circle <- function(popularity_value) {
 }
 
 hot100_df |>
-  select(album_art, song_name, artist_name, track_duration, popularity) |> 
+  select(album_art, song_name, artist_name, track_duration, popularity) |>
   gt(id = "custom") |>
   cols_label(
     album_art = md("**Song**"),
@@ -59,15 +157,13 @@ hot100_df |>
     track_duration = html('<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15" height="15" viewBox="0,0,255.998,255.998"><g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M12,2c-5.523,0 -10,4.477 -10,10c0,5.523 4.477,10 10,10c5.523,0 10,-4.477 10,-10c0,-5.523 -4.477,-10 -10,-10zM14.586,16l-3.293,-3.293c-0.188,-0.188 -0.293,-0.442 -0.293,-0.707v-5c0,-0.552 0.448,-1 1,-1v0c0.552,0 1,0.448 1,1v4.586l3,3c0.39,0.39 0.39,1.024 0,1.414v0c-0.39,0.39 -1.024,0.39 -1.414,0z"></path></g></g></svg>'),
     popularity = md("**Popularity**")
   ) |>
-    cols_width(
+  cols_width(
     album_art      ~ px(55),
     song_name      ~ px(190),
     artist_name    ~ px(120),
     track_duration ~ px(55),
     popularity     ~ px(80)
   ) |>
-      
-  # Keep the sparkline column blank (reserved for later (sparkline = ""))
   text_transform(
     locations = cells_body(columns = album_art),
     fn = function(x) { web_image(url = x, height = 50) }
@@ -80,7 +176,6 @@ hot100_df |>
     style = cell_text(whitespace = "normal"),
     locations = cells_body(columns = c(song_name, artist_name))
   ) |>
-
   fmt(
     columns = track_duration,
     fns = function(x) {
@@ -130,31 +225,23 @@ hot100_df |>
       background-color: #383838;
     }
 
-    .cell-output-display {
-      overflow-x: unset !important;
+    #custom .gt_table {
+      table-layout: fixed;
+      width: 100%;
     }
-
-    div#custom {
-      overflow-x: unset !important;
-      overflow-y: unset !important;
-    }
-
-    #custom .gt_col_heading {
-      position: sticky !important;
-      top: -5px !important;
-      z-index: 10 !important;
-    }
-    #custom .gt_table { table-layout: fixed; width: 100%; }
     "
   )
 ```
 
-## Column {width="55%"}
-
-### Row {height="10%"}
+```{=html}
+  </div>
+  <aside class="dashboard-right">
+    <div class="dashboard-control">
+```
 
 ```{ojs}
-//| expandable: false
+//| echo: false
+
 hot100 = await FileAttachment("data/hot100_ojs.json").json()
 
 viewof songDropdown = Inputs.select(
@@ -167,19 +254,30 @@ viewof songDropdown = Inputs.select(
 )
 ```
 
-### Row {height="55%"}
+```{=html}
+    </div>
+    <div class="dashboard-player">
+```
 
 ```{ojs}
-//| expandable: false
-html`<iframe class="custom-iframe" style="border-radius:12px; display: flex; justify-content: center; align-items: center;" 
-  src=${`https://open.spotify.com/embed/track/${songDropdown.song_id}?utm_source=generator&theme=0`} 
-  width="100%" 
-  height="352" 
-  frameBorder="0" 
-  allowfullscreen="" 
-  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+//| echo: false
+
+html`<iframe
+  class="custom-iframe"
+  src=${`https://open.spotify.com/embed/track/${songDropdown.song_id}?utm_source=generator&theme=0`}
+  width="100%"
+  height="500"
+  frameborder="0"
+  allowfullscreen=""
+  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
   loading="lazy">
 </iframe>`
 ```
 
+```{=html}
+    </div>
+  </aside>
+</div>
+```
 
+:::
