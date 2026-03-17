@@ -73,6 +73,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0.2rem 0;
+  color: #ffffff;
 }
 
 .mood-kpi-sub {
@@ -89,6 +90,7 @@
 .mood-outlier-title {
   font-weight: 700;
   margin-bottom: 0.6rem;
+  color: #ffffff;
 }
 
 .mood-track-item {
@@ -107,6 +109,7 @@
 .mood-track-name {
   font-size: 0.86rem;
   font-weight: 600;
+  color: #ffffff;
 }
 
 .mood-track-artist,
@@ -124,4 +127,14 @@
 .quarto-dashboard .cell-output-display,
 .cell-output-display {
   overflow-x: auto;
+}
+
+.page-shell label,
+.page-shell .observablehq label {
+  color: #ffffff;
+}
+
+.page-shell select,
+.page-shell .observablehq select {
+  color: #ffffff;
 }

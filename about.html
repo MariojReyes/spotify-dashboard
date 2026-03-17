@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7fb59815a1c41eec7c034637f0c35ff0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-10f9f9801116ee05904e9c4a8941d7a4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ffd3360c872a873698d9fa5a778b2db1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,16 +72,16 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="quarto-light">
 
 <div id="quarto-search-results"></div>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -90,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -102,37 +102,34 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="d-flex flex-wrap gap-2 mb-2">
-  <a class="btn btn-success btn-sm rounded-pill px-3" href="./about.html">ℹ️ About Me</a>
-  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="./dashboard.html">📊 Hot 100 Chart</a>
-  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="./mood-of-the-week.html">🎧 Mood Snapshot</a>
+<div class="page-shell">
+  <div class="d-flex flex-wrap gap-2 mb-3 page-nav">
+    <a class="btn btn-success btn-sm rounded-pill px-3" href="about.html">ℹ️ About Me</a>
+    <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="dashboard.html">📊 Hot 100 Chart</a>
+    <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="mood-of-the-week.html">🎧 Mood Snapshot</a>
+  </div>
 </div>
 <!-- This project is a learning exercise inspired by 
-     Melissa Van Bussel’s 2024 Posit Table Contest submission.
-     Original dashboard structure and design patterns credited to her work: 
+     Melissa Van Bussel's 2024 Posit Table Contest submission.
+     Original dashboard structure and design patterns credited to her work:
      https://github.com/melissavanbussel/spotify-dashboard -->
+<div class="page-shell">
 <div class="columns">
-<div class="column" style="width:35%;">
-<p><img src="images/headshot.jpg" style="width: 25vw; border-radius: 15px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"></p>
-</div>
-</div>
-<div class="column" style="width:5%;">
-
-</div>
-<div class="column" style="width:60%;">
+<div class="column" style="text-align: center;">
+<p><img src="images/headshot.jpg" class="about-headshot"></p>
+</div><div class="column" style="width:62%;">
 <p><big></big></p><big>
 </big><section id="hi-im-mario" class="level1"><big>
 <h1>Hi, I’m Mario</h1>
 </big><section id="welcome-to-my-project" class="level3"><big>
 <h3 class="anchored" data-anchor-id="welcome-to-my-project">Welcome to my project!</h3>
-<p>This dashboard is part of a personal learning end to end analytics project. Interacting with multiple apis, ingesting, cleaning, analyzing real-time data.&nbsp;</p>
+<p>This dashboard is part of a personal learning end-to-end analytics project. It pulls from multiple APIs and walks through ingesting, cleaning, and analyzing real-time data.</p>
 <p>The first page of this dashboard was inspired by <strong>Melissa Van Bussel’s 2024 Posit Table Contest submission</strong>, which served as a template and educational reference.</p>
-<p>The current version includes a lightweight data pipeline that refreshes Spotify Hot 100 track data, manages cache files for weekly updates, and enriches chart tracks with audio features for analysis-ready outputs. Second page will be added soon, and will include a more in depth analysis of the audio features of the tracks, as well as some visualizations. Taking a look at how music has evolved over time, and how the audio features of the tracks have changed over time.</p>
+<p>The current version includes a lightweight data pipeline that refreshes Spotify Hot 100 track data, manages cache files for weekly updates, and enriches chart tracks with audio features for analysis-ready outputs. The mood page extends the project with audio-feature analysis and supporting visualizations.</p>
 <p>If you’d like to connect, you can find me here:</p>
 <div class="about-contact">
 <ul>
-<li>GitHub: <a href="https://github.com/MariojReyes">github.com/MariojReyes</a><br>
-</li>
+<li>GitHub: <a href="https://github.com/MariojReyes">github.com/MariojReyes</a></li>
 <li>LinkedIn: <a href="https://linkedin.com/in/marioreyesiii">linkedin.com/in/marioreyesiii</a></li>
 </ul>
 </div>
@@ -140,11 +137,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 </div>
-<p>::::::</p>
-<div class="d-flex flex-wrap gap-2 mt-3">
-  <a class="btn btn-success btn-sm rounded-pill px-3" href="./about.html">ℹ️ About Me</a>
-  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="./dashboard.html">📊 Hot 100 Chart</a>
-  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="./mood-of-the-week.html">🎧 Mood Snapshot</a>
+</div>
 </div>
 
 
