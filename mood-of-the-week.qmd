@@ -4,7 +4,7 @@ subtitle: "A population-vibe read from Spotify audio features in this week's Hot
 format:
   html:
     page-layout: full
-    theme: darkly
+    theme: [cosmo, custom.scss]
     css: mood-of-the-week.css
     toc: false
     self-contained: false
@@ -128,13 +128,15 @@ dark_theme <- theme_minimal(base_size = 13) +
   )
 ```
 
-::: {.mood-page}
+::: {.page-shell}
 
-::: {.mood-nav}
-<a class="mood-nav-btn" href="about.html">ℹ️ About Me</a>
-<a class="mood-nav-btn" href="dashboard.html">📊 Hot 100 Chart</a>
-<a class="mood-nav-btn mood-nav-btn-active" href="mood-of-the-week.html">🎧 Mood Snapshot</a>
-:::
+```{=html}
+<div class="d-flex flex-wrap gap-2 mb-3 page-nav">
+  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="about.html">ℹ️ About Me</a>
+  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="dashboard.html">📊 Hot 100 Chart</a>
+  <a class="btn btn-success btn-sm rounded-pill px-3" href="mood-of-the-week.html">🎧 Mood Snapshot</a>
+</div>
+```
 
 ::: {.mood-intro}
 **Mood Index** is a composite score from valence, energy, danceability, and tempo (scaled 0–100), shown as both track-average and popularity-weighted exposure.
