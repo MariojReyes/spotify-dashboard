@@ -1,60 +1,55 @@
 ---
 title: "About Me"
 toc: false
+format:
+  html:
+    page-layout: full
 ---
 
 ```{=html}
-<div class="d-flex flex-wrap gap-2 mb-2">
-  <a class="btn btn-success btn-sm rounded-pill px-3" href="about.qmd">ℹ️ About Me</a>
-  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="dashboard.qmd">📊 Hot 100 Chart</a>
-  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="mood-of-the-week.qmd">🎧 Mood Snapshot</a>
+<div class="page-shell">
+  <div class="d-flex flex-wrap gap-2 mb-3 page-nav">
+    <a class="btn btn-success btn-sm rounded-pill px-3" href="about.html">ℹ️ About Me</a>
+    <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="dashboard.html">📊 Hot 100 Chart</a>
+    <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="mood-of-the-week.html">🎧 Mood Snapshot</a>
+  </div>
 </div>
 ```
 
 ```{=html}
 <!-- This project is a learning exercise inspired by 
-     Melissa Van Bussel’s 2024 Posit Table Contest submission.
-     Original dashboard structure and design patterns credited to her work: 
+     Melissa Van Bussel's 2024 Posit Table Contest submission.
+     Original dashboard structure and design patterns credited to her work:
      https://github.com/melissavanbussel/spotify-dashboard -->
 ```
 
-:::::: columns
-::: {.column width="35%"}
-<img src="images/headshot.jpg" style="width: 25vw; border-radius: 15px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-:::
-:::
-
-::: {.column width="5%"}
+:::::: {.page-shell}
+::::: columns
+::: {.column width="38%" style="text-align: center;"}
+<img src="images/headshot.jpg" class="about-headshot">
 :::
 
-::: {.column width="60%"}
+::: {.column width="62%"}
 <big>
 
 # Hi, I'm Mario
 
 ### Welcome to my project!
 
-This dashboard is part of a personal learning end to end analytics project. Interacting with multiple apis, ingesting, cleaning, analyzing real-time data.\ 
+This dashboard is part of a personal learning end-to-end analytics project. It pulls from multiple APIs and walks through ingesting, cleaning, and analyzing real-time data.
 
-The first page of this dashboard was inspired by **Melissa Van Bussel’s 2024 Posit Table Contest submission**, which served as a template and educational reference.
+The first page of this dashboard was inspired by **Melissa Van Bussel's 2024 Posit Table Contest submission**, which served as a template and educational reference.
 
-The current version includes a lightweight data pipeline that refreshes Spotify Hot 100 track data, manages cache files for weekly updates, and enriches chart tracks with audio features for analysis-ready outputs. Second page will be added soon, and will include a more in depth analysis of the audio features of the tracks, as well as some visualizations. Taking a look at how music has evolved over time, and how the audio features of the tracks have changed over time.
+The current version includes a lightweight data pipeline that refreshes Spotify Hot 100 track data, manages cache files for weekly updates, and enriches chart tracks with audio features for analysis-ready outputs. The mood page extends the project with audio-feature analysis and supporting visualizations.
 
 If you'd like to connect, you can find me here:
 
 ::: {.about-contact}
--   GitHub: [github.com/MariojReyes](https://github.com/MariojReyes)\
--   LinkedIn: [linkedin.com/in/marioreyesiii](https://linkedin.com/in/marioreyesiii)
+- GitHub: [github.com/MariojReyes](https://github.com/MariojReyes)
+- LinkedIn: [linkedin.com/in/marioreyesiii](https://linkedin.com/in/marioreyesiii)
 :::
 
 </big>
 :::
+:::::
 ::::::
-
-```{=html}
-<div class="d-flex flex-wrap gap-2 mt-3">
-  <a class="btn btn-success btn-sm rounded-pill px-3" href="about.qmd">ℹ️ About Me</a>
-  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="dashboard.qmd">📊 Hot 100 Chart</a>
-  <a class="btn btn-outline-light btn-sm rounded-pill px-3" href="mood-of-the-week.qmd">🎧 Mood Snapshot</a>
-</div>
-```
